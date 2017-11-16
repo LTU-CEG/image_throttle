@@ -1,0 +1,13 @@
+<launch>
+  <node name="image_throttle_1" pkg="image_throttle" type="image_throttle_node" output="screen">
+    <remap to="cam0/image_raw" from="image_throttle/input" />
+    <remap to="cam0/throttled" from="image_throttle/output" />
+    <param name="output_rate" value="5" />
+  </node>
+  <node name="image_throttle_2" pkg="image_throttle" type="image_throttle_node" output="screen">
+    <remap to="cam1/image_raw" from="image_throttle/input" />
+    <remap to="cam1/throttled" from="image_throttle/output" />
+    <param name="output_rate" value="5" />
+  </node>
+</launch>
+
